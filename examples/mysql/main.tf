@@ -13,10 +13,10 @@ provider "aws" {
   region = "us-east-2"
 }
 
-module "alb" {
-  source = "../../modules/networking/alb"
+module "mysql" {
+  source = "../../modules/data-stores/mysql"
 
-  alb_name   = var.alb_name
-
-  subnet_ids = data.aws_subnets.default.ids
+  db_name     = var.db_name
+  db_username = var.db_username
+  db_password = var.db_password
 }

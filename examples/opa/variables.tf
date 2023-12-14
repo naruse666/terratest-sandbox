@@ -3,8 +3,10 @@
 # These parameters have reasonable defaults.
 # ---------------------------------------------------------------------------------------------------------------------
 
-variable "alb_name" {
-  description = "The name of the ALB and all its resources"
-  type        = string
-  default     = "terraform-up-and-running"
+variable "tags" {
+  description = "The tags to add to the EC2 instance"
+  type        = map(string)
+  default = {
+    ManagedBy = "Terraform"
+  }
 }
